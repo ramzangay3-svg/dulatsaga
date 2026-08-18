@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легенда Капланбека: Эпический Эпос</title>
+    
+    <!-- Подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comfortaa:wght@600;700&family=Montserrat:wght@700;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-soft: 'Comfortaa', cursive, sans-serif;
+            --font-rounded: 'Nunito', sans-serif;
+            --font-handwritten: 'Caveat', cursive;
+            --font-title: 'Montserrat', sans-serif;
+            
+            --font-primary: var(--font-soft);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: #090d16;
+            background: radial-gradient(circle at 50% 20%, #1a233a 0%, #090d16 80%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 15px;
+            gap: 40px;
+        }
+
+        .poster-card {
+            background: rgba(26, 36, 56, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 36px;
+            max-width: 760px;
+            width: 100%;
+            padding: 50px 40px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Эффекты свечения */
+        .poster-card::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 300px;
+            height: 300px;
+            background: rgba(249, 115, 22, 0.18);
+            filter: blur(90px);
+            border-radius: 50%;
+        }
+
+        .poster-card::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -120px;
+            width: 300px;
+            height: 300px;
+            background: rgba(20, 184, 166, 0.18);
+            filter: blur(90px);
+            border-radius: 50%;
+        }
+
+        .page-2::before {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .page-2::after {
+            background: rgba(168, 85, 247, 0.2);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-family: var(--font-title);
+            padding: 10px 24px;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fb923c;
+            margin-bottom: 25px;
+        }
+
+        .hero-badge.blue {
+            background: rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+
+        .title-name {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.15;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-tag {
+            font-family: var(--font-handwritten);
+            font-size: 2rem;
+            color: #14b8a6;
+            margin-bottom: 35px;
+            display: block;
+        }
+
+        .story-section {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 1.15rem;
+        }
+
+        .story-section p {
+            margin-bottom: 16px;
+            color: #e2e8f0;
+        }
+
+        .story-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-orange { color: #f97316; font-weight: 700; }
+        .highlight-teal { color: #2dd4bf; font-weight: 700; }
+        .highlight-blue { color: #60a5fa; font-weight: 700; }
+        .highlight-purple { color: #c084fc; font-weight: 700; }
+        .highlight-green { color: #4ade80; font-weight: 700; }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 600px) {
+            .choice-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .choice-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 20px;
+            padding: 22px 18px;
+            text-align: center;
+        }
+
+        .choice-card.gym { border-top: 4px solid #f97316; }
+        .choice-card.sauna { border-top: 4px solid #14b8a6; }
+        .choice-card.frost { border-top: 4px solid #3b82f6; }
+        .choice-card.aura { border-top: 4px solid #a855f7; }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .footer-banner {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-bro {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f97316 0%, #facc15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .slogan-warrior {
+            font-family: var(--font-rounded);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #2dd4bf;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 18px;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: 14px;
+            display: inline-block;
+        }
+
+        .page-divider {
+            color: #64748b;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- СТРАНИЦА 1: ЛЕГЕНДА ДУЛАТА -->
+    <div class="poster-card">
+        <div class="hero-badge">🔥 Легенда Капланбека</div>
+
+        <h1 class="title-name">Дулат Капланбек</h1>
+        <span class="title-tag">~ Пожиратель Бань ~</span>
+
+        <div class="story-section">
+            <p>
+                О нём слагают легенды от дубовых парных до железа тренажёрных залов. <span class="highlight-orange">Дулат Капланбек</span> — человек, для которого сотня градусов в сауне — это просто лёгкий прохладный ветерок.
+            </p>
+            <p>
+                Он заходит в парную, где плавится камень, и выжимает из каждого уголка пара всю слабость и спесь. Но выбор всегда остается за тобой, братан!
+            </p>
+        </div>
+
+        <div class="choice-grid">
+            <div class="choice-card gym">
+                <span class="card-icon">🏋️‍♂️</span>
+                <div class="card-text">
+                    Либо ты качаешься с нами до предела...
+                </div>
+            </div>
+
+            <div class="choice-card sauna">
+                <span class="card-icon">💨</span>
+                <div class="card-text">
+                    ...либо пар в бане выжмет из тебя всю спесь!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <div class="footer-bro">БРАТАН, ТЫ С НАМИ? 🤝</div>
+            <div class="slogan-warrior">Никому не стать как Дулат — он воин войск Sweetie Fox! 🦊⚔️</div>
+        </div>
+    </div>
+
+    <div class="page-divider">••• Следующая глава •••</div>
+
+    <!-- СТРАНИЦА 2: ВЕРНЫЕ ВОИНЫ И БРАТАНЫ -->
+    <div class="poster-card page-2">
+        <div class="hero-badge blue">⚔️ Соратники и Воины</div>
+
+        <h1 class="title-name">Братья по Оружию</h1>
+        <span class="title-tag" style="color: #60a5fa;">~ Великая Армия Капланбека ~</span>
+
+        <div class="story-section">
+            <p>
+                Ни один великий завоеватель не сражается в одиночку. Рядом с Дулатом идут его верные воины, готовые сокрушить любого врага.
+            </p>
+            <p>
+                Первый из них — <span class="highlight-blue">Раян Братан</span>, легендарный генералиссимус <span class="highlight-blue">Холодных Войск Baby Сары Кыз</span>. Его хладнокровие замораживает дух соперников еще до начала боя!
+            </p>
+            <p>
+                А второй воин Дулата-братана — <span class="highlight-purple">Алдияр</span>. Сокрушительный соратник, запускающий <span class="highlight-green">самые сильные осыраки в мире</span>! Его устрашающая газовая атака отгоняет всё живое и неживое в радиусе целого километра!
+            </p>
+        </div>
+
+        <div class="choice-grid">
+            <div class="choice-card frost">
+                <span class="card-icon">❄️👩‍🦰</span>
+                <div class="card-text">
+                    Раян — Морозный страж войск Baby Сары Кыз!
+                </div>
+            </div>
+
+            <div class="choice-card aura">
+                <span class="card-icon">☣️💨</span>
+                <div class="card-text">
+                    Алдияр — Властелин Мощнейших Осыраков в Мире!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <div class="footer-bro" style="background: linear-gradient(135deg, #3b82f6 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">НЕПОБЕДИМАЯ СИЛА 🛡️</div>
+            <div class="slogan-warrior" style="color: #60a5fa; background: rgba(59, 130, 246, 0.1);">С такими братанами Дулат держит весь мир! 👑🐺</div>
+        </div>
+    </div>
+
+</body>
+</html>

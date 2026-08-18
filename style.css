@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #08080a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card-wrapper {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.neon-card {
+  background: #111116;
+  border-radius: 24px;
+  padding: 32px 24px;
+  border: 1px solid rgba(255, 204, 0, 0.2);
+  box-shadow: 0 0 50px rgba(255, 51, 51, 0.15), 0 20px 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,204,0,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.status-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff3333, #ff6600);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #ffcc00;
+  text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+.hero-subtitle {
+  color: #8a8a9e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 8px 0 24px;
+}
+
+.feature-box {
+  display: flex;
+  gap: 16px;
+  background: #181820;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 1px solid #262633;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  border-color: #ffcc00;
+}
+
+.box-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.box-content h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+.box-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #b3b3c6;
+}
+
+.steps-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #d1d1e0;
+}
+
+.steps-list li {
+  margin-bottom: 6px;
+}
+
+.quote-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,51,51,0.1), rgba(255,204,0,0.1));
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.quote-symbol {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 40px;
+  color: #ffcc00;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote-card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.4;
+}
